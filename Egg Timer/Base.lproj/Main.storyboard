@@ -1,14 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2327e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Egg_Timer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +17,69 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sTz-37-0Uf">
+                                <items>
+                                    <navigationItem title="Egg Timer" id="i6R-ae-ocS">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="pause" id="FYU-o3-M5k">
+                                            <connections>
+                                                <action selector="btnPause:" destination="BYZ-38-t0r" id="Zfj-Kw-FqI"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="esu-cL-nin">
+                                            <connections>
+                                                <action selector="btnGo:" destination="BYZ-38-t0r" id="3ub-RY-ABT"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yWz-Cb-Xmn">
+                                <items>
+                                    <barButtonItem title="-10" id="Fqe-rZ-Ejx">
+                                        <connections>
+                                            <action selector="btnSubtractTen:" destination="BYZ-38-t0r" id="qK1-8N-V3v"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="HKe-61-S3d"/>
+                                    <barButtonItem title="Reset" id="0Ml-0H-DeX">
+                                        <connections>
+                                            <action selector="btnReset:" destination="BYZ-38-t0r" id="2MO-NO-YJP"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="agQ-Ek-uM7"/>
+                                    <barButtonItem title="+10" id="fls-OV-CMy">
+                                        <connections>
+                                            <action selector="btnAddTen:" destination="BYZ-38-t0r" id="mJu-R0-8SW"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="210" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2E0-nb-CVI">
+                                <fontDescription key="fontDescription" type="system" pointSize="41"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sTz-37-0Uf" firstAttribute="leading" secondItem="yWz-Cb-Xmn" secondAttribute="leading" id="3dU-wD-1sM"/>
+                            <constraint firstItem="sTz-37-0Uf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Mvw-G3-joa"/>
+                            <constraint firstItem="sTz-37-0Uf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="OgB-aR-9F9"/>
+                            <constraint firstItem="2E0-nb-CVI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="foN-2X-0NP"/>
+                            <constraint firstItem="sTz-37-0Uf" firstAttribute="centerX" secondItem="2E0-nb-CVI" secondAttribute="centerX" id="fwH-r3-FVH"/>
+                            <constraint firstItem="sTz-37-0Uf" firstAttribute="trailing" secondItem="yWz-Cb-Xmn" secondAttribute="trailing" id="gEM-3X-wy5"/>
+                            <constraint firstItem="yWz-Cb-Xmn" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="kYU-Kh-Kvn"/>
+                            <constraint firstItem="2E0-nb-CVI" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="m8U-va-fpH"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lblTimeLeft" destination="2E0-nb-CVI" id="dJw-3t-2Au"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="329" y="120"/>
         </scene>
     </scenes>
 </document>
